@@ -254,4 +254,4 @@ def scan(update: Update, context: CallbackContext) -> None:
         pass
 
 
-init('1441936003:AAHDln1Pr0hpbvX4gqCDTtRAcq8KHwbK-TY')
+init('') # <-- Token here
