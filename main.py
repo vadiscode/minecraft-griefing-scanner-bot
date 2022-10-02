@@ -121,7 +121,7 @@ def subdomains(update: Update, context: CallbackContext) -> None:
 def range(update: Update, context: CallbackContext) -> None:
     try:
         try:
-            nm = nmap.PortScanner()  # instantiate nmap.PortScanner object
+            nm = nmap.PortScanner()
         except nmap.PortScannerError:
             update.message.reply_text('Error with setting up scanning.')
         except:
