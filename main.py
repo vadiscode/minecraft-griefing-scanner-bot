@@ -43,7 +43,7 @@ def info(update: Update, context: CallbackContext) -> None:
         bad_chars = ['§0', '§1', '§2', '§3', '§4', '§5', '§6', '§7', '§8', '§9', '§a', '§b', '§c', '§d', '§e', '§f',
                      '§g', '§k', '§l', '§m', '§n', '§o', '§r']
 
-        print('Nigger: ' + socket.gethostbyname(server.host) + ':' + str(server.port))
+        print('Host: ' + socket.gethostbyname(server.host) + ':' + str(server.port))
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(1)
         s.connect((socket.gethostbyname(server.host), int(server.port)))
@@ -163,7 +163,7 @@ def range(update: Update, context: CallbackContext) -> None:
                             except AttributeError:
                                 motd = motd
 
-                            print('Nigger: ' + socket.gethostbyname(server.host) + ':' + str(port))
+                            print('Host: ' + socket.gethostbyname(server.host) + ':' + str(port))
                             update.message.reply_text(
                                 '*⇨ IP Address:* {0}:{1}\n*⇨ Status:* 🟢\n*⇨ Players:* ({2}/{3})\n*⇨ Version:* {4} | Protocol {5}\n*⇨ MOTD:* {6}'.format(
                                     server.host,
@@ -192,10 +192,10 @@ def scan(update: Update, context: CallbackContext) -> None:
 
         target = context.args[0]
         selectedMode = context.args[1]
-        nigga = context.args[2]
+        level = context.args[2]
 
         update.message.reply_text('Scan started')
-        nm.scan(target, selectedMode, arguments='-T' + nigga + ' --open')
+        nm.scan(target, selectedMode, arguments='-T' + level + ' --open')
         update.message.reply_text('Scan completed, displaying results')
 
         for host in nm.all_hosts():
@@ -206,7 +206,7 @@ def scan(update: Update, context: CallbackContext) -> None:
                 try:
                     for port in lport:
                         sleep(0.1)
-                        print('Nigger: ' + socket.gethostbyname(nm[host].hostname()) + ':' + str(port))
+                        print('Host: ' + socket.gethostbyname(nm[host].hostname()) + ':' + str(port))
                         try:
                             address = target
                             server = MinecraftServer(socket.gethostbyname(nm[host].hostname()), port)
@@ -218,7 +218,7 @@ def scan(update: Update, context: CallbackContext) -> None:
                                          '§e', '§f',
                                          '§g', '§k', '§l', '§m', '§n', '§o', '§r']
 
-                            print('Nigger: ' + socket.gethostbyname(server.host) + ':' + str(port))
+                            print('Host: ' + socket.gethostbyname(server.host) + ':' + str(port))
                             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                             s.settimeout(1)
                             s.connect((socket.gethostbyname(server.host), int(server.port)))
